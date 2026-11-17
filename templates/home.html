@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f5fa;
+            padding: 25px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #243b64;
+            margin-bottom: 25px;
+        }
+
+        .top {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .a {
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .a:hover {
+            background-color: #1745a5;
+        }
+
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .small {
+            background-color: white;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            width: 250px;
+            min-height: 450px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .small:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .small img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .small h3 {
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        .small h5 {
+            color: #444;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .actions {
+            margin-top: 18px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .actions a {
+            text-decoration: none;
+            padding: 9px 18px;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .view {
+            background-color: #16a34a;
+        }
+
+        .delete {
+            background-color: #dc2626;
+        }
+
+        .view:hover {
+            background-color: #15803d;
+        }
+
+        .delete:hover {
+            background-color: #991b1b;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Management System</h1>
+
+    <div class="top">
+        <a href="/stds/add">
+            <button class="a">+ Add Student</button>
+        </a>
+    </div>
+
+    <div class="box">
+
+        {% for std in stds %}
+
+        <div class="small">
+
+            <img src="{{std[6]}}" alt="Student Image">
+
+            
+
+            <h5>Name: {{std[1]}}</h5>
+            <h5>Age: {{std[2]}}</h5>
+            <h5>Gender: {{std[3]}}</h5>
+            <h5>Marks: {{std[4]}}</h5>
+            <h5>Course: {{std[5]}}</h5>
+            
+            
+
+            <div class="actions">
+                <a class="view" href="/students/{{std[0]}}">View</a>
+
+                <a class="delete" href="/std/delete/{{std[0]}}">Delete</a> 
+                    <a class="delete" href="/sdts/edit/{{std[0]}}">Update</a>
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</body>
+</html>

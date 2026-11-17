@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .small {
+            background-color: white;
+            border-radius: 15px;
+            border: 1px solid #ddd;
+            width: 320px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .small:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .image {
+            height: 130px;
+            width: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #2563eb;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        h5 {
+            text-align: left;
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .view {
+            background-color: #16a34a;
+        }
+
+        .home {
+            background-color: #2563eb;
+        }
+
+        .view:hover {
+            background-color: #15803d;
+        }
+
+        .home:hover {
+            background-color: #1745a5;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="small">
+
+        <img class="image" src="{{std[6]}}" alt="Student Picture">
+
+        <h2>Student Details</h2>
+
+        
+
+        <h5>Name: {{std[1]}}</h5>
+        <h5>Age: {{std[2]}}</h5>
+        <h5>Gender: {{std[3]}}</h5>
+        <h5>Marks: {{std[4]}}</h5>
+        <h5>Course: {{std[5]}}</h5>
+        {% if std[7] %}
+        <p style="background-color: #629b77;">Present</p>
+        {% else %}
+        <p style="background-color: #0fdd5a;">Absent</p>
+        {% endif %}
+        <div class="buttons">
+
+            
+
+            <a class="home" href="/">Home</a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

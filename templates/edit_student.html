@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            width: 400px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 11px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 5px rgba(37,99,235,0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background-color: #1745a5;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Update student Form</h1>
+
+        <form action="/sdts/edit/{{std[0]}}" method="post">
+
+            <label>Name :</label>
+            <input type="text" name="name" placeholder="Enter student name" required value="{{std[1]}}">
+
+            <label>Age (18-60) :</label>
+            <input type="number" name="age" min="18" max="60"
+                   placeholder="Enter age" required value="{{std[2]}}">
+
+            <label>Gender :</label>
+            <input type="text" name="gender" placeholder="Enter gender" required value="{{std[3]}}">
+
+            <label>Marks :</label>
+            <input type="number" name="marks" placeholder="Enter marks" required value="{{std[4]}}">
+
+            <label>Course :</label>
+            <input type="text" name="course" placeholder="Enter course" required value="{{std[5]}}">
+
+            <label>Image :</label>
+            <input type="text" name="image" placeholder="Enter image URL" value="{{std[6]}}">
+
+            <label>Attendance :</label>
+            <select name="status">
+                <option value="1">Present</option>
+                <option value="0">Absent</option>
+            </select>
+
+            <button type="submit">update student</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
